@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace = "fragments :: nav"></nav>
+<!--
+<span th:unless="${cheeses} and ${cheeses.size()}">Sorry - no cheese:</span>
+<ul>
+
+    <li th:each="cheese : ${cheeses}" th:text="${cheese}"></li>
+
+</ul>
+-->
+
+<span th:unless="${cheeseArr}">Sorry - no cheese:</span>
+
+<br/>
+<tr th:each="item : ${cheeseArr}">
+    <b><td th:text="${item.getName()}">Key</td></b>
+    <td th:text="${item.getDescription()}">Value</td>
+</tr>
+
+</body>
+</html>
